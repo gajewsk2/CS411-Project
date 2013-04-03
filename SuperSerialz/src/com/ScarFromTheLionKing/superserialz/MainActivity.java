@@ -44,6 +44,8 @@ public class MainActivity extends Activity {
 		            {
 		                loginInformation [1] = usernameInput.getText().toString();
 		                loginInformation [2] = passwordInput.getText().toString();
+		                loginInformation [1] = "username";////////
+		                loginInformation [2] = "password";////////
 		            	Log.i("LoginU", loginInformation[1]);
 		                Log.i("LoginP", loginInformation[2]);
 		                AsyncPost loginTask = new AsyncPost();

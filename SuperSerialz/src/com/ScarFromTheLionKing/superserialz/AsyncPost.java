@@ -81,8 +81,9 @@ public class AsyncPost extends AsyncTask<String, String, String>{
         try {
             // Add your data
             List<NameValuePair> nameValuePairs = new ArrayList<NameValuePair>(2);
-            nameValuePairs.add(new BasicNameValuePair("username",uri[1]));	//Need to get input 
-            nameValuePairs.add(new BasicNameValuePair("pass", uri[2]));		//From textfields
+            //nameValuePairs.add(new BasicNameValuePair("username",uri[1]));	//Need to get input 
+            //nameValuePairs.add(new BasicNameValuePair("pass", uri[2]));		//From textfields
+            nameValuePairs.add(new BasicNameValuePair("user","username"));////////	
             httppost.setEntity(new UrlEncodedFormEntity(nameValuePairs));
 
             // Execute HTTP Post Request
