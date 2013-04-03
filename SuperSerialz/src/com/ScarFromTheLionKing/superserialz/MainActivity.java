@@ -44,8 +44,8 @@ public class MainActivity extends Activity {
 		            {
 		                loginInformation [1] = usernameInput.getText().toString();
 		                loginInformation [2] = passwordInput.getText().toString();
-		                loginInformation [1] = "username";////////
-		                loginInformation [2] = "password";////////
+		                //loginInformation [1] = "username";////////
+		                //loginInformation [2] = "password";////////
 		            	Log.i("LoginU", loginInformation[1]);
 		                Log.i("LoginP", loginInformation[2]);
 		                AsyncPost loginTask = new AsyncPost();
@@ -67,8 +67,8 @@ public class MainActivity extends Activity {
 			                Log.i("loginResult", "Login was succesful!!!");
 			                Toast.makeText(getApplicationContext(), "Login was Succesfull", Toast.LENGTH_SHORT).show();
 			                Intent i = new Intent(getApplicationContext(), MenuActivity.class);
-			                i.putExtra("username", loginInformation[1]);
-			                i.putExtra("password", loginInformation[2]);
+			                i.putExtra("username", loginInformation[1]);	//Passes the username to the next activity
+			                i.putExtra("password", loginInformation[2]);	//Passes the password to the next activity
 
 			                startActivity(i); // Start MenuActivity
 

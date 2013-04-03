@@ -34,34 +34,7 @@ public class AsyncPost extends AsyncTask<String, String, String>{
 
        
     	
-/*
-  
-  		This stuff is not used right now
- 				Ignore it
- 		  	
-    	HttpClient httpclient = new DefaultHttpClient();
-        HttpResponse response;
-        String responseString = null;
-        try {
-            response = httpclient.execute(new HttpGet(uri[0]));
-            StatusLine statusLine = response.getStatusLine();
-            if(statusLine.getStatusCode() == HttpStatus.SC_OK){
-                ByteArrayOutputStream out = new ByteArrayOutputStream();
-                response.getEntity().writeTo(out);
-                out.close();
-                responseString = out.toString();
-            } else{
-                //Closes the connection.
-                response.getEntity().getContent().close();
-                throw new IOException(statusLine.getReasonPhrase());
-            }
-        } catch (ClientProtocolException e) {
-            //TODO Handle problems..
-        } catch (IOException e) {
-            //TODO Handle problems..
-        }
-        return responseString;
-*/
+
     }
 
     @Override
@@ -81,9 +54,9 @@ public class AsyncPost extends AsyncTask<String, String, String>{
         try {
             // Add your data
             List<NameValuePair> nameValuePairs = new ArrayList<NameValuePair>(2);
-            //nameValuePairs.add(new BasicNameValuePair("username",uri[1]));	//Need to get input 
-            //nameValuePairs.add(new BasicNameValuePair("pass", uri[2]));		//From textfields
-            nameValuePairs.add(new BasicNameValuePair("user","username"));////////	
+            nameValuePairs.add(new BasicNameValuePair("username",uri[1]));	//Need to get input 
+            nameValuePairs.add(new BasicNameValuePair("pass", uri[2]));		//From textfields
+            //nameValuePairs.add(new BasicNameValuePair("user","username"));////////	
             httppost.setEntity(new UrlEncodedFormEntity(nameValuePairs));
 
             // Execute HTTP Post Request
