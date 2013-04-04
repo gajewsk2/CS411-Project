@@ -92,16 +92,24 @@ public class MainActivity extends Activity implements OnItemClickListener {
 				try {
 					
 					Log.i("string", "Before");										
-					//JSONArray arr = new JSONArray(result);
+					JSONArray arr = new JSONArray(result);
+					Log.i("string", result);										
+
 					JSONObject jObj = new JSONObject(result);// arr.getJSONObject(0);
+					Log.i("string", "2");										
+					
 					//String date = jObj.getString("members");
 					
 					
 					
-					Log.i("string", "Before For Loop");					
+					//Log.i("string", "Before For Loop");					
+					Log.i("string", "Befor2");
 					JSONObject mainJson = new JSONObject(result);
-					JSONArray jsonArray = mainJson.getJSONArray(ARRAY_NAME);
-					Log.i("string", "Before For Loop");
+
+					//JSONObject foo = mainJson;
+					//String uid = foo.get("username").toString();
+					JSONArray jsonArray = mainJson.getJSONArray("username");
+					Log.i("string", "Before For Loop 2");
 					for (int i = 0; i < jsonArray.length(); i++) {
 						Log.i("string", "there were some items");
 

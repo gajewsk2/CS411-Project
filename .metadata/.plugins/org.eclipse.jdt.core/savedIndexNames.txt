@@ -1,7 +1,3 @@
 INDEX VERSION 1.126+C:\Users\turtl_000\Documents\GitHub\CS411-Project\.metadata\.plugins\org.eclipse.jdt.core
-2591547369.index
-3920171680.index
 513898838.index
-468105007.index
 3072192398.index
-444855715.index

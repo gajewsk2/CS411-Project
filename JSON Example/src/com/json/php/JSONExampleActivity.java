@@ -10,8 +10,7 @@ import org.apache.http.client.ClientProtocolException;
 import org.apache.http.client.HttpClient;
 import org.apache.http.client.methods.HttpPost;
 import org.apache.http.impl.client.DefaultHttpClient;
-import org.json.JSONException;
-import org.json.JSONObject;
+
 
 import android.app.Activity;
 import android.os.Bundle;
@@ -29,31 +28,24 @@ public class JSONExampleActivity extends Activity {
         HttpPost httppost = new HttpPost("http://superserial.web.engr.illinois.edu/androidTest.php");
         TextView textView = (TextView)findViewById(R.id.textView1);
 		try {
-			Log.i("string", "1");
-			HttpResponse response = httpclient.execute(httppost);
-			
-			String jsonResult = inputStreamToString(response.getEntity().getContent()).toString();
-			Log.i("string", jsonResult);
-			JSONObject object = new JSONObject(jsonResult);
-			
-
-			String name = object.getString("output");
-	    	String version = object.getString("version");
-	    	textView.setText(name + " - " + version);
-	    	
+			HttpResponse response = httpclient.execute(httppost);	//Send the POST request
+			String jsonResult = inputStreamToString(response.getEntity().getContent()).toString();	//Convert the Jason to string
+			Log.i("string", jsonResult);	//Log results in logcat
+	    	textView.setText(jsonResult);	//Show results on screen
 		} 
-		catch (JSONException e) {
-			e.printStackTrace();
-		} 
+		
 		catch (ClientProtocolException e) {
+			Log.i("String","Error Protocol");
 			e.printStackTrace();
 		} 
 		catch (IOException e) {
+			Log.i("String","Error Other");
 			e.printStackTrace();
 		}
 
 
        }
+    /*Still need to learn how this function works*/
     private StringBuilder inputStreamToString(InputStream is) {
         String rLine = "";
         StringBuilder answer = new StringBuilder();
@@ -64,7 +56,6 @@ public class JSONExampleActivity extends Activity {
           answer.append(rLine);
            }
         }
-         
         catch (IOException e) {
             e.printStackTrace();
          }
