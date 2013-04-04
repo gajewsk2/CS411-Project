@@ -113,6 +113,22 @@ public class MainActivity extends Activity {
 		return true;
 	}
 
-	
+	  public String[] jsonStringParser(String jsonString)
+		{	
+			
+			String delims = "[\\[\\],\"]+";
+			String[] tokens = jsonString.split(delims);
+//			int i = 0;
+//			Log.i("string1", jsonString);
+//			if(tokens.length == 0)
+//				Log.i("jsonS", "empty");
+//			for (String t:tokens)
+//			{
+//				++i;
+//				Log.i("tokens", i+t);
+//			}		
+			return tokens;
+			
+		}
 	//new RequestTask().execute("http://stackoverflow.com");
 }
