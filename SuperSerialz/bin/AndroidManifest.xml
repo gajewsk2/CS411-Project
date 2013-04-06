@@ -29,6 +29,14 @@
             android:name="com.ScarFromTheLionKing.superserialz.MenuActivity"
             android:label="@string/title_activity_menu" >
         </activity>
+        <activity
+            android:name="com.ScarFromTheLionKing.superserialz.ListviewMainActivity"
+            android:label="@string/title_activity_listview_main" >
+        </activity>
+        <activity
+            android:name="com.ScarFromTheLionKing.superserialz.SelectedItemActivity"
+            android:label="@string/title_activity_selected_item" >
+        </activity>
     </application>
 
 </manifest>

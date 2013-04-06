@@ -1,24 +1,22 @@
 package com.ScarFromTheLionKing.superserialz;
 
-import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
-import org.apache.http.HttpStatus;
 import org.apache.http.NameValuePair;
-import org.apache.http.StatusLine;
 import org.apache.http.client.ClientProtocolException;
 import org.apache.http.client.HttpClient;
 import org.apache.http.client.entity.UrlEncodedFormEntity;
-import org.apache.http.client.methods.HttpGet;
 import org.apache.http.client.methods.HttpPost;
 import org.apache.http.impl.client.DefaultHttpClient;
 import org.apache.http.message.BasicNameValuePair;
 import org.apache.http.util.EntityUtils;
 
+import android.app.ProgressDialog;
+import android.content.Context;
 import android.os.AsyncTask;
 import android.util.Log;
 
@@ -27,14 +25,51 @@ public class AsyncPost extends AsyncTask<String, String, String>{
     @Override
     protected String doInBackground(String... uri) {
     	
+    if(uri[0].equalsIgnoreCase("http://superserial.web.engr.illinois.edu/androidLogin.php"))
+    {
         Log.i("loginTag", uri[0]);
         Log.i("loginTag", uri[1]);
         Log.i("loginTag", uri[2]);
+        Log.i("loginTag", "login");
         return postData(uri);
+    }
 
-       
-    	
 
+    if(uri[0].equalsIgnoreCase("http://superserial.web.engr.illinois.edu/androidGetid.php"))
+    {
+        Log.i("loginTag", uri[0]);
+        Log.i("loginTag", uri[1]);
+        Log.i("loginTag", uri[2]);
+        Log.i("loginTag", "getId");
+        return postData(uri);
+    }
+
+    
+    if(uri[0].equalsIgnoreCase("http://superserial.web.engr.illinois.edu/androidGetName.php"))
+    {
+        Log.i("loginTag", uri[0]);
+        Log.i("loginTag", uri[1]);
+        Log.i("loginTag", uri[2]);
+        Log.i("loginTag", "getName");
+        return postData(uri);
+    }
+
+    
+    if(uri[0].equalsIgnoreCase("http://superserial.web.engr.illinois.edu/androidGetDesc.php"))
+    {
+        Log.i("loginTag", uri[0]);
+        Log.i("loginTag", uri[1]);
+        Log.i("loginTag", uri[2]);
+        Log.i("loginTag", "getDesc");
+        return postData(uri);
+    }    
+    
+    
+   // http://superserial.web.engr.illinois.edu/androidGetName.php
+   // http://superserial.web.engr.illinois.edu/androidGetDesc.php
+    
+    return "Results";
+    
     }
 
     @Override
